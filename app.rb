@@ -54,6 +54,8 @@ get("/dice/5/4") do
 end
 
 get("/dynamic/:number_of_dice/6") do
+  params
+
   @rolls = []
 
   50.times do
