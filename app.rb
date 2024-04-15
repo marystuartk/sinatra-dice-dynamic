@@ -6,7 +6,7 @@ get("/") do
 end
 
 
-get("/dynamic/:number_of_dice/6") do
+get("/dynamic/:number_of_dice/:how_many_sides") do
   @num_dice = params.fetch("number_of_dice").to_i
 
   @sides = params.fetch("how_many_sides").to_i
@@ -23,13 +23,9 @@ get("/dynamic/:number_of_dice/6") do
 end
 
 get("/dice/2/6") do
-  first_die = rand(1..6)
-	second_die = rand(1..6)
-  sum = first_die + second_die
+  @rolls = [rand(1..6), rand(1..6)]
 	
-	@outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
-	
-	erb(:two_six)
+  erb(:two_six)
 end
 
 get("/dice/2/10") do
