@@ -1,9 +1,6 @@
 <h1>2d10</h1>
-
 <ul>
-  <% @rolls.each do |a_roll| %>
-    <li>
-      <%= a_roll %>
-    </li>
-  <% end %>
+  <li>Roll 1: <%= @rolls.at(0) %></li>
+  <li>Roll 2: <%= @rolls.at(1) %></li>
 </ul>
+<p>Total: <%= @rolls.at(0) + @rolls.at(1) %></p>
