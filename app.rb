@@ -52,3 +52,12 @@ get("/dice/5/4") do
 	
   erb(:five_four)
 end
+
+get("/dice/:number_of_dice/:number_of_sides") do
+  @num_dice = params.fetch("number_of_dice").to_i
+  @num_sides = params.fetch("number_of_sides").to_i
+
+  @rolls = Array.new(@num_dice) { rand(1..@num_sides) }
+
+  erb(:dynamic_dice_roll)
+end

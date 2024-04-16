@@ -1,3 +1,10 @@
 <h1>5d4</h1>
 
-<p><%= @outcome %></p>
+<ul>
+  <li>Roll 1: <%= @rolls.at(0) %></li>
+  <li>Roll 2: <%= @rolls.at(1) %></li>
+  <li>Roll 3: <%= @rolls.at(2) %></li>
+  <li>Roll 4: <%= @rolls.at(3) %></li>
+  <li>Roll 5: <%= @rolls.at(4) %></li>
+</ul>
+<p>Total: <%= @rolls.at(0) + @rolls.at(1) + @rolls.at(2) + @rolls.at(3) + @rolls.at(4) %></p>
